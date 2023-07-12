@@ -85,6 +85,11 @@ def populate_people_table():
     con.close()
 
     # Hint: See example code in lab instructions entitled "Working with Faker"
+    fake = Faker("en_CA")
+    for _ in range(10):
+     province = fake.administrative_unit()
+     population = fake.random_int(min=900000, max=100000000)
+     print(f'The population of {province} is {population}.')
     return
 
 if __name__ == '__main__':
